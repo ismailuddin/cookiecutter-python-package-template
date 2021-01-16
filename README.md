@@ -1,7 +1,25 @@
 # 🐍 Python package template repository
 > Repository for `cookiecutter` template for setting up a minimal Python package
 
-## Usage
+Repository for holding the cookiecutter template for creating a minimal Python
+package.
+
+## ✨ Features
+- 📚 Sphinx documentation
+    - Auto API documentation using `sphinx-apidoc`
+    - Notebook support using `nbsphinx`
+- 🧱 Makefile for automating steps e.g. building docs
+- ✅ Example tests using `unittest` layout
+- Custom `.pylintrc` file
+- `CHANGELOG.md` file
+- `pyproject.toml` file for setting Black formatter line length to 79    
+
+## 🛠 Requirements
+- Python 3.6 or newer
+- cookiecutter
+- Make
+
+## 🚀 Usage
 Initialise the template using the `cookiecutter` command:
 
 ```shell
