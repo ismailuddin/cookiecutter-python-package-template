@@ -1,4 +1,6 @@
 # 🐍 Python package template repository
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 > Repository for `cookiecutter` template for setting up a minimal Python package
 
 Repository for holding the cookiecutter template for creating a minimal Python
