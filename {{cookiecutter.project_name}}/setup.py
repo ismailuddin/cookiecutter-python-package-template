@@ -27,6 +27,7 @@ setup(
     ],
     description="{{cookiecutter.short_description}}",
     install_requires=[
+        "pandas"
     ],
     license="MIT license",
     long_description=long_description,

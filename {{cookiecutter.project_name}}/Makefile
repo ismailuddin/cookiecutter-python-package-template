@@ -15,6 +15,9 @@ export BROWSER_PYSCRIPT
 
 BROWSER := python -c "$$BROWSER_PYSCRIPT"
 
+test:
+	pytest --cov={{cookiecutter.package_name}}
+
 docs: ## generate Sphinx HTML documentation, including API docs
 	rm -rf docs/source/api
 	sphinx-apidoc -f -o docs/source/api {{cookiecutter.package_name}}
