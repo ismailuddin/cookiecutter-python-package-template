@@ -1,0 +1,6 @@
+pytest
+pytest-cov
+build
+flake8
+pylint
+isort

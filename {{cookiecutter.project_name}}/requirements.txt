@@ -1,7 +1,0 @@
-pandas
-sphinx
-nbsphinx
-recommonmark
-sphinx-material
-pytest
-pytest-cov

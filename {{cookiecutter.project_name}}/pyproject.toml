@@ -1,2 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [tool.black]
-line-length = 79
+line-length = 88
+
+[tool.commitizen]
+version = "{{cookiecutter.package_version}}"
+tag_format = "v$major.$minor.$patch$prerelease"
+version_files = [
+   "{{cookiecutter.package_name}}/__init__.py",
+   "setup.cfg"
+]
+
+[tool.isort]
+profile = "black"
+force_single_line = true
+line_length = 79
