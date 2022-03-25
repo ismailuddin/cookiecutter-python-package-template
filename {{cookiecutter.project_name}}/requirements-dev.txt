@@ -7,3 +7,4 @@ isort
 pre-commit
 mypy
 build
+commitizen
