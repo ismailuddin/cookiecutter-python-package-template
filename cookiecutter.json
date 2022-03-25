@@ -5,7 +5,7 @@
     "short_description": "Your brief project description...",
 
     "package_name": "{{cookiecutter.project_name|lower|replace(' ', '_')|replace('-', '_')}}",
-    "package_version": "0.1.1",
+    "package_version": "0.0.0",
     "github_username": "Your GitHub username",
     "github_base_url": "https://www.github.com/{{cookiecutter.github_username}}",
     "project_url": "{{cookiecutter.github_base_url}}/{{cookiecutter.package_name}}"
