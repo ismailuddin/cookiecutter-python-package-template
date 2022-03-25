@@ -5,13 +5,20 @@
 
 
 ## Requirements
-- Python 3.6 or newer
+- Python 3.8 or newer
 
 ## 🛠 Installation
 To install the package, run the following command from a terminal:
 
-```shell
+```bash
 $   pip install .
+```
+
+## Installation for development
+Run the following:
+
+```bash
+$   pip install -e ".[test]"
 ```
 
 
