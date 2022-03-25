@@ -4,3 +4,4 @@ build
 flake8
 pylint
 isort
+pre-commit
