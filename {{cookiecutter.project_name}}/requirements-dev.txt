@@ -8,4 +8,5 @@ pre-commit
 bandit
 mypy
 build
+cruft
 commitizen
