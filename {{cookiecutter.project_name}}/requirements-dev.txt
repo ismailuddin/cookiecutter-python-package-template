@@ -1,0 +1,12 @@
+pytest
+pytest-cov
+build
+flake8
+pylint
+isort
+pre-commit
+bandit
+mypy
+build
+cruft
+commitizen
