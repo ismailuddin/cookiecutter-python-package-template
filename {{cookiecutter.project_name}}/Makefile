@@ -1,4 +1,4 @@
-.PHONY: docs mypy test clean clean-build clean-pyc clean-test dist release
+.PHONY: docs mypy test check clean clean-build clean-pyc clean-test dist release
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -41,6 +41,12 @@ mypy:
 
 test:
 	pytest --cov={{cookiecutter.package_name}} --cov-report html
+	
+check:
+	pylint src/{{cookiecutter.package_name}}
+	bandit src/{{cookiecutter.package_name}} -r
+	flake8 src
+	isort src
 
 docs: # Generate Sphinx HTML documentation, including API docs
 	rm -rf docs/source/api
