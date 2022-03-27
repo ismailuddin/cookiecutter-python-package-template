@@ -17,7 +17,7 @@ package.
 - `pyproject.toml` file for setting Black formatter line length to 79    
 
 ## 🛠 Requirements
-- Python 3.6 or newer
+- Python 3.8 or newer
 - cookiecutter
 - Make
 
