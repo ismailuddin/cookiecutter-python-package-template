@@ -12,10 +12,11 @@ package.
     - Notebook support using `nbsphinx`
 - 🧱 Makefile for automating steps e.g. building docs
 - ✅ Example tests using `unittest` layout
-- Custom `pylintrc` file based on [Google Python Style guide](https://google.github.io/styleguide/pyguide.html)
-- `CHANGELOG.md` file
-- `pyproject.toml` file for setting up tools and package
-- Modern `pip` [PEP517 setup installer](https://peps.python.org/pep-0517/)
+- ⚠️ Pre-commit hooks setup
+- 🗄 Custom `pylintrc` file based on [Google Python Style guide](https://google.github.io/styleguide/pyguide.html)
+- 📜 `CHANGELOG.md` file
+- 📋 `pyproject.toml` file for setting up tools and package
+- 🚅 Modern `pip` [PEP517 setup installer](https://peps.python.org/pep-0517/)
 
 ## 🛠 Requirements
 - Python 3.8 or newer
