@@ -5,6 +5,7 @@ flake8
 pylint
 isort
 pre-commit
+bandit
 mypy
 build
 commitizen
