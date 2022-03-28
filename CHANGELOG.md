@@ -1,3 +1,6 @@
+# v1.1.0
+- Fix minor bugs with `setup.cfg`, `pyproject.toml`
+- Configure pre-commit hooks to ignore `docs` folder
 # v1.0.0
 - Switch to `src` based package layout
 - Use more modern PEP517 based approach for package installation

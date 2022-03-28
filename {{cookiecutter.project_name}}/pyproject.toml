@@ -9,7 +9,7 @@ line-length = 88
 version = "{{cookiecutter.package_version}}"
 tag_format = "v$major.$minor.$patch$prerelease"
 version_files = [
-   "{{cookiecutter.package_name}}/__init__.py",
+   "src/{{cookiecutter.package_name}}/__init__.py",
    "setup.cfg"
 ]
 
