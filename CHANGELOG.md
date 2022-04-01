@@ -1,3 +1,6 @@
+# v1.1.1
+- Fix bug with GitHyb `ci.yml` template strings conflicting with cookiecutter
+- Fix bug in `pre-commit-config.yaml`
 # v1.1.0
 - Fix minor bugs with `setup.cfg`, `pyproject.toml`
 - Configure pre-commit hooks to ignore `docs` folder
