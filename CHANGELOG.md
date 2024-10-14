@@ -1,3 +1,9 @@
+## v1.2.0 (2024-10-14)
+
+### Feat
+
+- Add manual and trigerred release pipelines
+
 # v1.1.1
 - Fix bug with GitHyb `ci.yml` template strings conflicting with cookiecutter
 - Fix bug in `pre-commit-config.yaml`
