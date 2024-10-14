@@ -1,0 +1,67 @@
+name: Release package to PyPI
+on: workflow_dispatch
+jobs:
+  release:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: |
+          python -m pip install pytest pytest-cov
+          python -m pip install pylint flake8 isort bandit commitizen
+          pip install -e .
+      - name: Pylint
+        run: |
+          pylint src
+      - name: Bandit
+        run: |
+          bandit src -r
+      - name: Flake8
+        run: |
+          flake8 src
+      - name: iSort
+        run: |
+          isort src
+      - name: Commitizen
+        run: |
+          cz check --rev-range v0.1.0..HEAD
+      - name: Unit-testing
+        run: |
+          pytest --cov=src
+      - name: Install pypa/build
+        run: >-
+          python -m pip install build --user
+      - name: Create bump and changelog
+        run: |
+          git config user.name "{{cookiecutter.author_name}}"
+          git config user.email "{{cookiecutter.author_email}}"
+          cz bump --changelog --yes
+      - name: Commit and push
+        run: |
+          git config user.name "{{cookiecutter.author_name}}"
+          git config user.email "{{cookiecutter.author_email}}"
+          git push origin dev --tags
+      - name: Build binary wheel and source tarball
+        run: >-
+          python -m build --sdist --wheel --outdir dist/
+      - name: Publish distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+            password: ${{ "{{" }} secrets.PYPI_API_TOKEN {{ "}}" }}  
+      - name: Merge source branch into main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            git config user.name "{{cookiecutter.author_name}}"
+            git config user.email "{{cookiecutter.author_email}}"
+            git fetch origin
+            git checkout main
+            git merge dev
+            git push origin main
