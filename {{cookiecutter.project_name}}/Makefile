@@ -43,21 +43,18 @@ test:
 	pytest --cov={{cookiecutter.package_name}} --cov-report html
 	
 check:
-	pylint src/{{cookiecutter.package_name}}
-	bandit src/{{cookiecutter.package_name}} -r
-	flake8 src
-	isort src
+	ruff check src
+	ruff format src
 
 docs: # Generate Sphinx HTML documentation, including API docs
 	rm -rf docs/source/api
-	sphinx-apidoc -f -o docs/source/api {{cookiecutter.package_name}}
+	sphinx-apidoc -f -o docs/source/api ./src/{{cookiecutter.package_name}}
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/build/html/index.html
 
 dist: clean
-	python -m build --sdist
-	python -m build --wheel
+	uv build
 
 release: dist # Package and upload a release
-	twine upload dist/*
+	uv publish
