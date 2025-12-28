@@ -1,3 +1,10 @@
+## v2.1.1 (2025-12-28)
+
+### Fix
+
+- Update outdated docs to mention use of uv and Python 3.13
+- Force single line imports with ruff
+
 ## v2.1.0 (2025-12-28)
 
 ### Feat
