@@ -24,12 +24,12 @@ repository = "{{cookiecutter.project_url}}"
 [dependency-groups]
 dev = [
    "bandit",
-   "pre-commit>=4.5.1",
    "commitizen>=4.10.1",
    "ruff>=0.14.10",
    "cruft>=2.16.0",
    "pytest>=9.0.2",
    "pytest-cov>=7.0.0",
+   "prek>=0.2.25",
 ]
 docs = [
    "nbsphinx>=0.9.8",
