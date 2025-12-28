@@ -1,3 +1,9 @@
+## v2.0.0 (2025-12-28)
+
+### Feat
+
+- Switch to using uv and ruff
+
 ## v1.2.1 (2025-12-28)
 
 ### Fix
