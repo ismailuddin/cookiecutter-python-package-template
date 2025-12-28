@@ -13,13 +13,13 @@ package.
 - 🧱 Makefile for automating steps e.g. building docs
 - ✅ Example tests using `unittest` layout
 - ⚠️ Pre-commit hooks setup
-- 🗄 Custom `pylintrc` file based on [Google Python Style guide](https://google.github.io/styleguide/pyguide.html)
+
 - 📜 `CHANGELOG.md` file
 - 📋 `pyproject.toml` file for setting up tools and package
 - 🚅 Modern `pip` [PEP517 setup installer](https://peps.python.org/pep-0517/)
 
 ## 🛠 Requirements
-- Python 3.8 or newer
+- Python 3.11 or newer
 - `cookiecutter`
 - Make
 - [`cruft`](https://github.com/cruft/cruft) (Recommended)

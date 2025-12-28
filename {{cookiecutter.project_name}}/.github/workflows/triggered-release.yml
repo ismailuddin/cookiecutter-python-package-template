@@ -11,33 +11,34 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Python 3.8
-        uses: actions/setup-python@v2
+      - uses: actions/checkout@v4
         with:
-          python-version: 3.8
+          fetch-depth: 0
+      - name: Set up Python
+        run: uv python install
       - name: Install dependencies
+        run: uv sync
+      - name: Lint
+        run: ruff check --output-format=github src
+      - name: Format
+        run: ruff format --check src
+      - name: Unit-testing
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install pytest pylint flake8 pytest-cov
-          python -m pip install flake8 isort bandit
-      - name: Run checks
-        run: |
-          pylint src/{{ cookiecutter.package_name }}
-          bandit src/{{ cookiecutter.package_name }} -r
-          flake8 src
-          isort src
-      - name: Test with pytest
-        run: |
-          pytest --cov={{ cookiecutter.package_name }}
-      - name: Install pypa/build
-        run: >-
-          python -m pip install build --user
+          pytest --cov=src
       - name: Build binary wheel and source tarball
-        run: >-
-          python -m build --sdist --wheel --outdir dist/
+        run: uv build
       - name: Publish distribution to PyPI
         if: startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          password: ${{ "{{" }} secrets.PYPI_API_TOKEN {{ "}}" }}
+          password: {{ "${{" }} secrets.PYPI_API_TOKEN {{ "}}" }} 
+      - name: Merge source branch into main
+        env:
+          GITHUB_TOKEN: {{ "${{" }} secrets.GITHUB_TOKEN {{ "}}" }}
+        run: |
+            git config user.name "{{cookiecutter.author_name}}"
+            git config user.email "{{cookiecutter.author_email}}"
+            git fetch origin
+            git checkout main
+            git merge dev
+            git push origin main
