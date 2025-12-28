@@ -3,7 +3,7 @@ name = "{{cookiecutter.package_name}}"
 version = "{{cookiecutter.package_version}}"
 description = "{{cookiecutter.short_description}}"
 readme = { file = "README.md", content-type = "text/markdown" }
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 dependencies = ["pandas"]
 authors = [
    { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}" },
@@ -19,7 +19,7 @@ license = { file = "LICENCE" }
 
 
 [project.urls]
-repository = "{{cookiecutter.project_url}}"
+Repository = "{{cookiecutter.project_url}}"
 
 [dependency-groups]
 dev = [
