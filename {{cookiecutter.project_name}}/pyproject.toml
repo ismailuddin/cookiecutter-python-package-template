@@ -54,3 +54,9 @@ version_files = [
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "--cov={{cookiecutter.package_name}} --cov-report html"
+
+[tool.ruff.lint.isort]
+force-single-line = true
+
+[tool.ruff.lint]
+select = ["F", "I"]
