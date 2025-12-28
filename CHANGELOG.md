@@ -1,3 +1,9 @@
+## v1.2.1 (2025-12-28)
+
+### Fix
+
+- Fix bug with secrets variable
+
 ## v1.2.0 (2024-10-14)
 
 ### Feat
