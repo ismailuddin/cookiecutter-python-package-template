@@ -1,3 +1,9 @@
+## v2.1.0 (2025-12-28)
+
+### Feat
+
+- Switch to prek from pre-commit
+
 ## v2.0.0 (2025-12-28)
 
 ### Feat
